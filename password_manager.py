@@ -20,7 +20,7 @@ class psw_mnger(Frame):
         Frame.__init__(self,master)
         self.pack(expand=YES,fill=BOTH)
         self.master.title('Password Manager')
-        master.geometry("800x200")
+        master.geometry("850x200")
 
 
         #website_label
@@ -44,6 +44,8 @@ class psw_mnger(Frame):
         password = StringVar()
         Entry(self,relief=SUNKEN,font='20',textvariable=password,width=40).grid(row=2,column=2)
 
+        
+
         #Load_button
         Button(master,text='Load',font='20',command=create,width=10,height=1).pack(side=LEFT,padx=10)
 
@@ -52,10 +54,8 @@ class psw_mnger(Frame):
 
         #save_button
         Button(master,text='Save',font='20',command=create,width=10,height=1).pack(side=LEFT,padx=10)
-       
-        
-        
-        
+
+          
 
 if __name__ =='__main__':
     root = Tk()
