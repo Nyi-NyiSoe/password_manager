@@ -13,7 +13,7 @@ def create():
     sp_char = "@#$&_-()=%*:/!?+."
 
     str = lower + upper + numbers + sp_char
-    length  = int(input("enter the length of your password! "))
+   
     password = "".join(random.sample(str,8))
     return password
 
@@ -43,7 +43,7 @@ class psw_mnger(Frame):
         Frame.__init__(self,master)
         self.pack(expand=YES,fill=BOTH)
         self.master.title('Password Manager')
-        master.geometry("850x200")
+        master.geometry("500x200")
 
 
         #platform_label
@@ -68,12 +68,12 @@ class psw_mnger(Frame):
         Entry(self,justify=CENTER,relief=SUNKEN,font='20',textvariable=self.password,width=40).grid(row=2,column=2)
 
         #Load_button
-        load_btn = Button(master,text='Load',font='20',command=create,width=10,height=1)
+        load_btn = Button(master,text='Load',font='20',command=None,width=10,height=1)
         load_btn.pack(side=LEFT,padx=10)
         
 
         #create_button
-        create_btn = Button(master,text='Create',font='20',command=None,width=10,height=1)
+        create_btn = Button(master,text='Create',font='20',command=lambda :self.password.set(create()),width=10,height=1)
         create_btn.pack(side=LEFT,padx=75)
 
         #save_button
